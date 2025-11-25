@@ -9,9 +9,9 @@ class _FitnessCalculatorPageState extends State<FitnessCalculatorPage> {
   final TextEditingController minutesController = TextEditingController();
 
   final List<Map<String, dynamic>> workouts = [
-    {"name": "Running", "cal": 12, "image": "assets/run.png"},
-    {"name": "Walking", "cal": 4, "image": "assets/walk.png"},
-    {"name": "Cycling", "cal": 8, "image": "assets/cycle.png"},
+    {"name": "Running", "cal": 12, "image": "assets/run.jpg"},
+    {"name": "Walking", "cal": 4, "image": "assets/pushup.jpg"},
+    {"name": "Cycling", "cal": 8, "image": "assets/cycle.jpg"},
   ];
 
   Map<String, dynamic>? selectedWorkout;
@@ -32,7 +32,7 @@ class _FitnessCalculatorPageState extends State<FitnessCalculatorPage> {
     }
 
     int minutes = int.parse(minutesController.text);
-    int total = minutes * selectedWorkout!["cal"];
+    int total = (minutes * selectedWorkout!["cal"]).toInt();
 
     setState(() {
       result =
